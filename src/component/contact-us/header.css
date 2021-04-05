@@ -1,0 +1,31 @@
+.contact-us{
+    height: 50vh;
+    background-image: url(./../../background\ images/contactUs.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+}
+
+.contact-us::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #00000088;
+}
+
+.contact-us h1{
+    color: #ffffff;
+}
+
+.contact-us .head-links {
+    color: #fff;
+    font-weight: bold;
+}
+
+.contact-us .head-links a{
+    color: #fff;
+}

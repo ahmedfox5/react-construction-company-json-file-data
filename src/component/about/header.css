@@ -1,0 +1,30 @@
+.aboutHeader{
+    height: 50vh;
+    background-image: url(./../../background\ images/aboutHeader.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.aboutHeader::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #00000088;
+}
+
+.aboutHeader h1{
+    color: #ffffff;
+}
+
+.aboutHeader .head-links {
+    color: #fff;
+    font-weight: bold;
+}
+
+.aboutHeader .head-links a{
+    color: #fff;
+}

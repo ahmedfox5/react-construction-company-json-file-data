@@ -1,0 +1,14 @@
+.location iframe{
+    border: none;
+    margin: 20px auto;
+    display: flex;
+    width: 75%;
+}
+
+
+
+@media(max-width:768px){
+    .location iframe{
+        width: 100%;
+    }
+}

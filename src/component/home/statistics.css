@@ -1,0 +1,49 @@
+.statistics{
+    background-image: url(../../background\ images/statistics.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.statistics .content{
+    background: #c2bbbb99;
+    padding: 30px!important;
+}
+
+
+.statistic{
+    padding: 5px;
+    /* padding-top: 0!important;
+    padding-bottom: 0!important; */
+}
+.statistic img{
+    width: 50px;
+}
+
+.statistic h1{
+    width: 100%;
+    font-size: 50px;
+    position: absolute;
+    left: 0;
+    color: #ffc048;
+}
+
+.statistic h4{
+    color: #082263;
+}
+
+
+.statistic .col-5{
+    display: flex;
+    justify-content: center;
+}
+
+
+.statistic p{
+    margin: 0;
+    color: rgb(75, 70, 70);
+}
+
+.statistic .row{
+    justify-content: center;
+}

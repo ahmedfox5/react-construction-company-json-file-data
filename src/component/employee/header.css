@@ -1,0 +1,31 @@
+.employeeHeader{
+    height: 50vh;
+    background-image: url(./../../background\ images/employeeHeader.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-position: center;
+}
+
+.employeeHeader::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #00000088;
+}
+
+.employeeHeader h1{
+    color: #ffffff;
+}
+
+.employeeHeader .head-links {
+    color: #fff;
+    font-weight: bold;
+}
+
+.employeeHeader .head-links a{
+    color: #fff;
+}

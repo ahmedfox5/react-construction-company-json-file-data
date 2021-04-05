@@ -1,0 +1,11 @@
+.row{
+  margin: 0;
+}
+
+p{
+  color: #8f8f8f;
+}
+
+::selection{
+  background: #ffc048;
+}

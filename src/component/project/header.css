@@ -1,0 +1,30 @@
+.projectsHeader{
+    height: 50vh;
+    background-image: url(./../../background\ images/projectsHeader.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.projectsHeader::before{
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #00000088;
+}
+
+.projectsHeader h1{
+    color: #ffffff;
+}
+
+.projectsHeader .head-links {
+    color: #fff;
+    font-weight: bold;
+}
+
+.projectsHeader .head-links a{
+    color: #fff;
+}

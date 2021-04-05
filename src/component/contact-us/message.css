@@ -1,0 +1,27 @@
+
+.message-area{
+    height: 200px;
+    /* border-radius: 5px; */
+}
+
+.send-button{
+    background: #ffc048;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+}
+
+.send-button:hover{
+    color: #000;
+}
+
+.form-input:focus{
+    border:2px solid#ffc048!important;
+    box-sizing: border-box;
+}
+
+
+
+.message form div p{
+    color: #f00;
+}

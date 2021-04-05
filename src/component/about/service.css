@@ -1,0 +1,14 @@
+.about-service img{
+    width: 100%;
+}
+
+.about-service a button{
+    padding: 10px 20px;
+    border: none;
+    background: #ffc048;
+    color: #fff;
+}
+
+.about-service a button:hover{
+    color: #000;
+}
