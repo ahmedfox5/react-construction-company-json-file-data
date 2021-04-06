@@ -1,0 +1,218 @@
+{
+    "home" : {
+        "header" : {
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium eos, culpa minus ipsam dolores dolor, quaerat voluptatum ullam sit blanditiis inventore magnam molestias, dolorem obcaecati provident veritatis totam. Incidunt, corrupti!" 
+        },
+        "service" : {
+            "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium dolore placeat illum reiciendis, minima eos? Dicta vel quas velit eligendi debitis totam, sunt quaerat.",
+            "construction" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore doloremque minima odio assumenda, hic impedit adipisci consectetur!",
+            "houseRenovation" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore doloremque minima odio assumenda, hic impedit adipisci consectetur!",
+            "painting" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore doloremque minima odio assumenda, hic impedit adipisci consectetur!",
+            "architectureDesign" : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore doloremque minima odio assumenda, hic impedit adipisci consectetur!"
+        },
+        "statistics":{
+                "client"   : 600 ,
+                "branches" : 10 ,
+                "projects" : 80 ,
+                "finished" : 75 
+        },
+        "best" : {
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, officia.",
+            "expertTechnicans" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat voluptate, mollitia ipsam facilis praesentium iusto.",
+            "professionalServices" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat voluptate, mollitia ipsam facilis praesentium iusto.",
+            "greatSupport" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat voluptate, mollitia ipsam facilis praesentium iusto.",
+            "technicalSkills" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat voluptate, mollitia ipsam facilis praesentium iusto.",
+            "highlyRecomended" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat voluptate, mollitia ipsam facilis praesentium iusto.",
+            "positiveReviews" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat voluptate, mollitia ipsam facilis praesentium iusto."
+        },
+        "recentWorks" : {
+            "description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium dolore placeat illum reiciendis, minima eos? Dicta vel quas velit eligendi debitis totam, sunt quaerat."
+        }
+    } ,
+    "projects" : [
+        {
+            "id" : 0 ,
+            "title" : "project 0 title" ,
+            "mainImage" : "pro22.png",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitat quae corporis praesentium quisquam pariatur magni",
+            "sections" : [
+                {
+                    "id" : 0,
+                    "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe",
+                    "sectionImage" : "sectionDescripe.jpg"
+                } ,
+                {
+                    "id" : 1,
+                    "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe",
+                    "sectionImage" : "sectionDescripe.jpg"
+                }
+            ],
+            "projectImages" : [
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" 
+            ]
+        } ,
+        {
+            "id" : 1 ,
+            "title" : "project 1 title" ,
+            "mainImage" : "pro22.png",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitat quae corporis praesentium quisquam pariatur magni",
+            "sections" : [
+                {
+                    "id" : 0,
+                    "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe",
+                    "sectionImage" : "sectionDescripe.jpg"
+                }
+            ],
+            "projectImages" : [
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" 
+            ]
+        } ,
+        {
+            "id" : 2 ,
+            "title" : "project 2 title" ,
+            "mainImage" : "pro22.png",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitat quae corporis praesentium quisquam pariatur magni",
+            "sections" : [],
+            "projectImages" : [
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" 
+            ]
+        } ,
+        {
+            "id" : 3 ,
+            "title" : "project 3 title" ,
+            "mainImage" : "pro22.png",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitat quae corporis praesentium quisquam pariatur magni",
+            "sections" : [
+                {
+                    "id" : 0,
+                    "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe",
+                    "sectionImage" : "sectionDescripe.jpg"
+                } ,
+                {
+                    "id" : 1,
+                    "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe",
+                    "sectionImage" : "sectionDescripe.jpg"
+                }
+            ],
+            "projectImages" : [
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" 
+            ]
+        } ,
+        {
+            "id" : 4 ,
+            "title" : "project 4 title" ,
+            "mainImage" : "pro22.png",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitat quae corporis praesentium quisquam pariatur magni",
+            "sections" : [
+                {
+                    "id" : 0,
+                    "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe",
+                    "sectionImage" : "sectionDescripe.jpg"
+                }
+            ],
+            "projectImages" : [
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" 
+            ]
+        } ,
+        {
+            "id" : 5 ,
+            "title" : "project 5 title" ,
+            "mainImage" : "pro22.png",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitat quae corporis praesentium quisquam pariatur magni",
+            "sections" : [],
+            "projectImages" : [
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" ,
+                "sectionDescripe.jpg" 
+            ]
+        }
+        
+    ] ,
+    "ourEmployees" : {
+        "description" : "Lorem ipsum dolor sit amet, illum reiciendis, minima eos? Dicta vel quas velit eligendi debitis totam, sunt quaerat." ,
+        "employees" : [
+            {
+                "id" : 0,
+                "name" : "Employee 0 name" ,
+                "job" : "project Manager" ,
+                "image" : "em1.png"
+            } ,
+            {
+                "id" : 1,
+                "name" : "Employee 1 name" ,
+                "job" : "Civil engineer" ,
+                "image" : "em2.jpg"
+            } ,
+            {
+                "id" : 2,
+                "name" : "Employee 2 name" ,
+                "job" : "Architecture" ,
+                "image" : "em3.jpg"
+            } ,
+            {
+                "id" : 3,
+                "name" : "Employee 3 name" ,
+                "job" : "Civil Engineer" ,
+                "image" : "em4.png"
+            } ,
+            {
+                "id" : 4,
+                "name" : "Employee 4 name" ,
+                "job" : "Civil Engineer" ,
+                "image" : "em5.png"
+            } ,
+            {
+                "id" : 5,
+                "name" : "Employee 5 name" ,
+                "job" : "Architecture" ,
+                "image" : "em6.jpg"
+            }
+        ]
+    } ,
+    "about" : {
+        "service" : {
+            "title" : "We serve all of your Construction services",
+            "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit ducimus blanditiis exercitationem! Perspiciatis facere aliquid labore incidunt nihil modi velit, laborum quibusdam! Ex consectetur dolore sapiente, magnam tenetur distinctio molestias magni recusandae iure provident ea voluptate tempore ratione itaque aliquam!",
+            "image" : "service.jpg"
+        },
+        "whoWeAre" : {
+            "description" : "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad consequuntur, facere nemo sunt nostrum ipsa provident quas, autem mollitia accusantium atque. Sunt earum saepe veniam, labore odit assumenda, dolorum dolorem accusamus eveniet numquam consequatur in ex accusantium consectetur alias quas deserunt voluptatum soluta repellendus tempora repudiandae magnam architecto eaque? Deserunt id repellat iste necessitatibus porro explicabo blanditiis voluptate quibusdam! Nisi.",
+            "image" : "who.jpg"
+        },
+        "whatWeDo" : {
+            "description" : "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad consequuntur, facere nemo sunt nostrum ipsa provident quas, autem mollitia accusantium atque. Sunt earum saepe veniam, labore odit assumenda, dolorum dolorem accusamus eveniet numquam consequatur in ex accusantium consectetur alias quas deserunt voluptatum soluta repellendus tempora repudiandae magnam architecto eaque? Deserunt id repellat iste necessitatibus porro explicabo blanditiis voluptate quibusdam! Nisi Deserunt id repellat iste necessitatibus porro explicabo blanditiis Deserunt id repellat iste necessitatibus porro explicabo blanditiis.",
+            "image" : "what.jpg"
+        }
+    },
+    "projectsPg" : {
+        "description" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitat quae corporis praesentium quisquam pariatur magni"
+    },
+    "footer" : {
+        "phone" : "+02 01012345678",
+        "email" : "email@example.com",
+        "media" : {
+            "facebook" : "aaaaa",
+            "googlePlus" : "aaaaa",
+            "twitter" : "aaaaa",
+            "pinterest" : "aaaaa",
+            "linkedIn" : "aaaaa"
+        },
+        "address" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quibusdam voluptates"
+    }
+}

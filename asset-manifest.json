@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/ahmedfox5/react-construction-company-json-file-data.git/static/css/main.f907ef6f.chunk.css",
+    "main.js": "/ahmedfox5/react-construction-company-json-file-data.git/static/js/main.2b40667d.chunk.js",
+    "main.js.map": "/ahmedfox5/react-construction-company-json-file-data.git/static/js/main.2b40667d.chunk.js.map",
+    "runtime-main.js": "/ahmedfox5/react-construction-company-json-file-data.git/static/js/runtime-main.ec488b40.js",
+    "runtime-main.js.map": "/ahmedfox5/react-construction-company-json-file-data.git/static/js/runtime-main.ec488b40.js.map",
+    "static/css/2.295dc518.chunk.css": "/ahmedfox5/react-construction-company-json-file-data.git/static/css/2.295dc518.chunk.css",
+    "static/js/2.b100cf0b.chunk.js": "/ahmedfox5/react-construction-company-json-file-data.git/static/js/2.b100cf0b.chunk.js",
+    "static/js/2.b100cf0b.chunk.js.map": "/ahmedfox5/react-construction-company-json-file-data.git/static/js/2.b100cf0b.chunk.js.map",
+    "static/js/3.b76539e1.chunk.js": "/ahmedfox5/react-construction-company-json-file-data.git/static/js/3.b76539e1.chunk.js",
+    "static/js/3.b76539e1.chunk.js.map": "/ahmedfox5/react-construction-company-json-file-data.git/static/js/3.b76539e1.chunk.js.map",
+    "index.html": "/ahmedfox5/react-construction-company-json-file-data.git/index.html",
+    "static/css/2.295dc518.chunk.css.map": "/ahmedfox5/react-construction-company-json-file-data.git/static/css/2.295dc518.chunk.css.map",
+    "static/css/main.f907ef6f.chunk.css.map": "/ahmedfox5/react-construction-company-json-file-data.git/static/css/main.f907ef6f.chunk.css.map",
+    "static/js/2.b100cf0b.chunk.js.LICENSE.txt": "/ahmedfox5/react-construction-company-json-file-data.git/static/js/2.b100cf0b.chunk.js.LICENSE.txt",
+    "static/media/header.css": "/ahmedfox5/react-construction-company-json-file-data.git/static/media/projectsHeader.ead9871b.jpg",
+    "static/media/statistics.css": "/ahmedfox5/react-construction-company-json-file-data.git/static/media/statistics.7d752e15.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ec488b40.js",
+    "static/css/2.295dc518.chunk.css",
+    "static/js/2.b100cf0b.chunk.js",
+    "static/css/main.f907ef6f.chunk.css",
+    "static/js/main.2b40667d.chunk.js"
+  ]
+}
