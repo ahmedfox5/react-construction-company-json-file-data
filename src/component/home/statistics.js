@@ -22,7 +22,7 @@ export default class Statistics extends Component{
 
                         <div className={'row statistic'} >
                             <div className={'col-5'} >
-                                <h1 className={'font-weight-bolder text-center' } id='counter1'>{statistics.client}</h1>
+                                <h1 className={'font-weight-bolder text-center' } id='counter1'>{statistics[0].value}</h1>
                             </div>
                             <div className={'col-7'} >
                                 <p>Satisfied</p>
@@ -40,7 +40,7 @@ export default class Statistics extends Component{
 
                         <div className={'row statistic'} >
                             <div className={'col-5'} >
-                                <h1 className={'font-weight-bolder text-center'} id='counter2'>{statistics.branches}</h1>
+                                <h1 className={'font-weight-bolder text-center'} id='counter2'>{statistics[1].value}</h1>
                             </div>
                             <div className={'col-7'} >
                                 <p>Worldwide</p>
@@ -58,7 +58,7 @@ export default class Statistics extends Component{
 
                         <div className={'row statistic'} >
                             <div className={'col-5'} >
-                                <h1 className={'font-weight-bolder text-center'} id='counter3'>{statistics.projects}</h1>
+                                <h1 className={'font-weight-bolder text-center'} id='counter3'>{statistics[2].value}</h1>
                             </div>
                             <div className={'col-7'} >
                                 <p>Total</p>
@@ -76,7 +76,7 @@ export default class Statistics extends Component{
 
                         <div className={'row statistic'} >
                             <div className={'col-5'} >
-                                <h1 className={'font-weight-bolder text-center'} id='counter4'>{statistics.finished}</h1>
+                                <h1 className={'font-weight-bolder text-center'} id='counter4'>{statistics[3].value}</h1>
                             </div>
                             <div className={'col-7'} >
                                 <p>Work</p>
@@ -96,7 +96,7 @@ export default class Statistics extends Component{
         
         window.addEventListener('scroll' ,()=>{
             if(document.querySelector('.statistics')){
-                if(document.querySelector('.statistics').getBoundingClientRect().top < window.innerHeight - 20 && !this.state.countingDone){
+                if(document.querySelector('.statistics').getBoundingClientRect().top < window.innerHeight - 20 && !this.state.countingDone && document.querySelector('.statistics').getBoundingClientRect().top > 0){
                     new smoothCounting('#counter1' ,2020);
                     new smoothCounting('#counter2' ,2000);
                     new smoothCounting('#counter3' ,2000);

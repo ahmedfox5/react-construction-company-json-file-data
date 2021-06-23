@@ -11,7 +11,7 @@ export default class Header extends Component{
                 <div className={'header-content'} >
                     <h1 className='title-after'>Welcome</h1>
                     <p className={'text-justify'}>
-                        {header.description}
+                        {header.value}
                     </p>
                     <br/>
                     <div className={'row'}>

@@ -18,7 +18,19 @@
     background-position: bottom;
     padding-top: 70px;
     border: none;
+    position: relative;
     /* box-shadow: -5px 0px 10px #000; */
+}
+
+.header::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #000000aa;
+    z-index: 1;
 }
 
 .header .header-content{
@@ -27,6 +39,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
+    z-index: 2;
 }
 
 .title-after{

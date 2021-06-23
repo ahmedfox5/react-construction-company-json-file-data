@@ -25,3 +25,37 @@
 .message form div p{
     color: #f00;
 }
+
+
+.notify{
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    background: #229922;
+    padding: 30px;
+    z-index: 300;
+    color: #fff;
+}
+
+.notify-show{
+    animation: notify 3s ease-in-out;
+}
+
+
+@keyframes notify {
+    0%{
+        left: -100%;
+    }
+    20%{
+        left: 100px;
+    }
+    50%{
+        left: 50px;
+    }
+    80%{
+        left: 50px;
+    }
+    100%{
+        left: -100%;
+    }
+}

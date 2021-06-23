@@ -19,7 +19,7 @@ export default class Service extends Component{
                         <Link to='/contact-us'><button>Contact Us</button></Link>
                     </div>
                     <div className={'col-md-6 p-3 order-md-first'} >
-                        <img src={'/imgs/' + service.image} alt='img' />
+                        <img src={this.props.url + 'imgs/' + service.img} alt='img' />
                     </div>
                 </div>
             </div>

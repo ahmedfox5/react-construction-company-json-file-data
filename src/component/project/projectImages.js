@@ -6,7 +6,7 @@ export default class ProjectImages extends Component{
         const images = this.props.images.map(img => {
            return (
             <div key={Math.random()} className={'col-md-5 p-4 m-1'} >
-                <img src={'/imgs/' + img} alt='img' />
+                <img src={this.props.url + 'imgs/projects/' + img.img} alt='img' />
             </div>
            ); 
         });

@@ -10,6 +10,12 @@ import Project from './component/project/project';
 import ContactUs from './component/contact-us/contactUs';
 import EmployeeView from './component/employee/employee';
 import {getFooterData} from './api/app';
+import Spin from './component/loading';
+import {getRecentProjects} from './api/projects';
+import {connect} from 'react-redux';
+import ScrollToTop from './component/ScrollToTop';
+
+
 
 class App extends Component{
 
@@ -34,7 +40,13 @@ class App extends Component{
       this.setState({
         footer : response.data.footer,
       })
-    })
+    });
+
+    getRecentProjects().then(response => {
+      if(response.data.success){
+          this.props.setProjects(response.data.projects);
+      }
+    });
   }
 
 
@@ -42,15 +54,18 @@ class App extends Component{
     return(
 
         <div className='App' >
+          <Spin />
           <NavBar />
           
           <Switch>
-            <Route exact path='/' component={Home} />
-            <Route path='/about' component={About} />
-            <Route exact path='/projects' component={Projects} />
-            <Route exact path='/projects/project/:id' component={Project} />
-            <Route exact path='/employees/employee/:id' component={EmployeeView} />
-            <Route path='/contact-us' component={ContactUs} />
+            <ScrollToTop>
+              <Route exact path='/' component={Home} />
+              <Route path='/about' component={About} />
+              <Route exact path='/projects' component={Projects} />
+              <Route exact path='/projects/project/:id' component={Project} />
+              <Route exact path='/employees/employee/:id' component={EmployeeView} />
+              <Route path='/contact-us' component={ContactUs} />
+            </ScrollToTop>
           </Switch>
           
           <br/><br/>
@@ -63,4 +78,14 @@ class App extends Component{
 
 
 }
-export default App;
+
+function mapDispatchToProps(dispatch){
+  return{
+    setProjects : (data) => dispatch({
+      type : 'SETPROJECTS',
+      data : data
+    })
+  }
+}
+
+export default connect(null ,mapDispatchToProps)(App);

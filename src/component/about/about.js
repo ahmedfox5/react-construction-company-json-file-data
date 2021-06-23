@@ -1,50 +1,90 @@
 import React ,{Component} from 'react';
 import Header from './header';
-import WhoWeAre from './whoWeAre';
-import WhatWeDo from './whatWeDo';
 import Service from './service';
 import Best from './../home/best';
-import {getAboutData} from './../../api/about';
+import AboutTemplate from './aboutTemplate';
+import {getAboutData ,getAbout} from './../../api/about';
+import {getBest} from './../../api/home';
+import {connect} from 'react-redux';
+import {startLoading ,stopLoading} from './../../actions/actions';
 
-export default class About extends Component{
+class About extends Component{
 
     state={
-        about : {
-            service : "",
-            whoWeAre : "",
-            whatWeDo : "",
-        },
-        best : "",
+        about : [
+            {
+                id: 1,
+                name: "",
+                title: "",
+                description: "",
+                img: ""
+            }
+        ],
+        best : [
+            {value:''},
+            {value:''},
+            {value:''},
+            {value:''},
+            {value:''},
+            {value:''},
+            {value:''},
+        ]
     }
 
     componentDidMount(){
-        getAboutData().then(response=>{
-            this.setState({
-                about : response.data.about ,
-                best : response.data.home.best
-            })
-            console.log(this.state);
-        })
+
+        this.props.startLoading();
+
+        getAbout().then( response => {
+            if(response.data.success){
+                this.setState({
+                    about : response.data.about ,
+                });
+
+                this.props.stopLoading();
+            }
+        });
+
+
+        getBest().then(response => {
+            if(response.data.success){
+                this.setState({
+                    best : response.data.best
+                });
+            }
+        });
     }
 
     render(){
+        let id = 0;
+        const about = this.state.about.map( temp => {
+            let classN = "";
+            if(id % 2 == 1){
+                classN = "order-md-first";
+            }
+            id++;
+            return (
+                <div>
+                    
+                    {temp.name != 'service'? <AboutTemplate url={this.props.url} key={temp.id} templateData={temp} imgDir={classN} /> : ""}
+
+                    <br/><br/>
+
+                </div>
+            );
+        });
         return(
             <div className={'about'} >
                 <Header />
 
                     <br/><br/>
 
-                <Service service={this.state.about.service} />
+                <Service url={this.props.url} service={this.state.about[0]} />
 
                     <br/><br/>
-                
-                <WhoWeAre whoWeAre={this.state.about.whoWeAre} />
 
-                    <br/><br/>
-                
-                <WhatWeDo whatWeDo={this.state.about.whatWeDo} />
+                    {about}
 
-                    <br/><br/>
 
                 <Best best={this.state.best} />
 
@@ -56,3 +96,18 @@ export default class About extends Component{
         );
     }
 }
+
+function mapDispatchToProps(dispatch){
+    return{
+        startLoading : () => dispatch(startLoading),
+        stopLoading : () => dispatch(stopLoading),
+    }
+}
+
+function mapStateToProps(state){
+    return{
+        'url' : state.url,
+    }
+}
+
+export default connect(mapStateToProps ,mapDispatchToProps)(About);

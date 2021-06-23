@@ -1,14 +1,27 @@
 import React ,{Component} from 'react';
 import './message.css';
-import {Formik ,Field, ErrorMessage} from 'formik';
+import {Formik ,Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import {sendMessage} from './../../api/contact';
+import {connect} from 'react-redux';
+import {startLoading ,stopLoading} from './../../actions/actions';
+import {addClass ,removeClass} from './../publicFunctions';
 
-export default class Message extends Component{
+
+
+class Message extends Component{
+
+    state = {
+        message : ''
+    }
+
     render(){
+
         return(
+
             <div className={'message'}>
-                 <h3 className={'text-center font-weight-bold'} >Send Message</h3>
-                 <Formik 
+                <h3 className={'text-center font-weight-bold'} >Send Message</h3>
+                <Formik 
                     initialValues={
                         {
                             firstName:'' ,
@@ -18,6 +31,7 @@ export default class Message extends Component{
                             message:''
                         }
                     }
+                    
                     onSubmit={this.onSubmit}
                     enableReinitialize={true}
                     validationSchema={this.sehema()}
@@ -67,13 +81,38 @@ export default class Message extends Component{
                             </form>
                         );
                     }}
-                 />
+                />
+
+                <div className={'notify'} > Successfly sent </div>
+
             </div>
+
         );
     }
 
-    onSubmit = (values) => {
-        console.log(values);
+    notify = () => {
+        addClass(document.querySelector('.notify') ,'notify-show');
+        setTimeout(() => {
+            removeClass(document.querySelector('.notify') ,'notify-show');
+        }, 3300);
+    }
+
+    onSubmit = (values ,{resetForm}) => {
+        this.props.startLoading();
+        sendMessage(values).then(response => {
+            if(response.data.success){
+                this.props.stopLoading();
+                resetForm({
+                    firstName:'' ,
+                    lastName:'',
+                    email:'',
+                    phone:'',
+                    message:''
+                });
+                this.notify();
+            }
+            
+        });
     }
 
     sehema = () => {
@@ -81,9 +120,19 @@ export default class Message extends Component{
             firstName : Yup.string().required(),
             lastName : Yup.string().required(),
             email : Yup.string().required().email(),
-            phone:Yup.number().required(),
+            phone:Yup.number().required().max(9999999999 ,'not valid phone number'),
             message : Yup.string().required().min(15 ,'Your message is too short')
         });
         return schema;
     }
 }
+
+
+function mapDispatchToProps(dispatch){
+    return {
+        startLoading : () => dispatch(startLoading),
+        stopLoading : () => dispatch(stopLoading),
+    }
+}
+
+export default connect(null ,mapDispatchToProps)(Message);

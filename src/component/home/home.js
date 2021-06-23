@@ -5,9 +5,27 @@ import Statistics from './statistics';
 import Best from './best';
 import HomeProjects from './home-projects';
 import Employees from './employees';
-import {getHomeData} from './../../api/home';
+import {getHomeData ,getHomeData2 ,getStatistics ,getBest} from './../../api/home';
+import {connect} from 'react-redux';
+import {startLoading ,stopLoading} from './../../actions/actions';
 
-export default class Home extends Component{
+
+
+function mapStateToProps (state){
+    return {
+        loading : state.loading,
+        url : state.url,
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return{
+        startLoading : () => dispatch(startLoading),
+        stopLoading : () => dispatch(stopLoading),
+    }
+}
+
+class Home extends Component{
     state = {
         home : {
             header : "",
@@ -23,55 +41,107 @@ export default class Home extends Component{
                 mainImage : "",
             }
         ],
-        ourEmployees : {
-            description : "",
-            employees : [
-                {
-                    id:0,
-                    name:"",
-                    job:"",
-                    image:""
-                }
-            ]
-        }
-            
-        
 
+        homeData : [
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+            {name : '' ,value : ''},
+        ],
+        statistics : [
+            {value : 1},
+            {value : 1},
+            {value : 1},
+            {value : 1},
+        ] ,
+        best : [
+            {value:''},
+            {value:''},
+            {value:''},
+            {value:''},
+            {value:''},
+            {value:''},
+            {value:''},
+        ]
+    
     }
+
+
+
     componentDidMount(){
+        this.props.startLoading();
         getHomeData().then(response => {
             this.setState({
                 home : response.data.home ,
                 projects : response.data.projects,
-                ourEmployees : response.data.ourEmployees
             });
-            console.log(response.data);
         });
+
+        getHomeData2().then( response => {
+            this.setState({
+                homeData : response.data.home,
+            });
+            this.props.stopLoading(); /////###$$
+        });
+
+        getStatistics().then(response => {
+            if(response.data.success){
+                this.setState({
+                    statistics : response.data.statistics
+                });
+            }
+        });
+
+        getBest().then(response => {
+            if(response.data.success){
+                this.setState({
+                    best : response.data.best
+                });
+            }
+        });
+
+
+        
     }
+
     render(){
         return(
             <div>
-                <Header header={this.state.home.header} />
+                <Header header={this.state.homeData[0]} />
+
 
                     <br/><br/><br/>
 
-                <Services service={this.state.home.service} />
+                <Services url={this.props.url} service={this.state.homeData.slice(1 ,6)} />
 
                     <br/><br/>
 
-                <Statistics statistics={this.state.home.statistics} />
+                <Statistics statistics={this.state.statistics} />
 
                     <br/><br/>
 
-                <Best best={this.state.home.best} />
+                <Best best={this.state.best} />
 
                     <br/><br/>
 
-                <HomeProjects recentWorks={this.state.home.recentWorks} projects={this.state.projects} />
+                <HomeProjects url={this.props.url} recentWorks={this.state.homeData[6]}  />
 
                     <br/><br/>
 
-                <Employees ourEmployees={this.state.ourEmployees} />
+                <Employees url={this.props.url} description={this.state.homeData[7].value} />
 
 
 
@@ -80,3 +150,5 @@ export default class Home extends Component{
     }
     
 }
+
+export default connect(mapStateToProps ,mapDispatchToProps)(Home);

@@ -18,7 +18,7 @@ export default class SectionDescripe extends Component{
                     </div>
 
                     <div className={'col-md-6 p-5 ' + classN} >
-                        <img src={'/imgs/' + sec.sectionImage} alt={'img'} />
+                        <img src={this.props.url + 'imgs/' + sec.img} alt={'img'} />
                     </div>
                 </div>
             );

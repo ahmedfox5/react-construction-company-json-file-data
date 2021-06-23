@@ -1,15 +1,15 @@
 import React ,{Component} from 'react';
 import Project from './../projects/project';
 import './projects.css';
+import {connect} from 'react-redux';
+import {Link} from 'react-router-dom';
 
-export default class HomeProjects extends Component{
+class HomeProjects extends Component{
 
     render(){
-        const description = this.props.recentWorks.description;
-        const theProjects = this.props.projects;
         const projects = this.props.projects.map(pro => {
             return(
-                <Project key={pro.id} project={pro} />
+                <Project url={this.props.url} key={pro.id} project={pro} />
             )
         })
         
@@ -17,13 +17,25 @@ export default class HomeProjects extends Component{
             <div className='home-projects' >
                 <h2 className={'text-center font-weight-bolder'}>Recent Works</h2>
                 <p className={'text-center m-auto w-75'}>
-                    {description}
+                    {this.props.recentWorks.value}
                 </p>
-                <button>View All Works</button>
+                <Link style={{textDecoration : 'none'}} to='/projects' ><button>View All Works</button></Link>
                 <div className={'row justify-content-center'} >
                     {projects}
                 </div>
             </div>
         );
     }
+
+    componentDidUpdate(){
+        console.log(this.props);
+    }
 }
+
+function mapStateToProps(state){
+    return {
+        projects : state.projects
+    }
+}
+
+export default connect(mapStateToProps)(HomeProjects);

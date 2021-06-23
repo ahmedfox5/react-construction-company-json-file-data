@@ -10,7 +10,7 @@ export default class Project extends Component{
         const project = this.props.project;
         return(
             <div className={'col-sm-5 col-md-3 m-3 border project'} >
-                <img src={'/imgs/' + project.mainImage} alt='img' />
+                <img src={this.props.url + 'imgs/projects/' + project.img} alt='img' />
                 <div className={'content'} >
                     <Link to={'/projects/project/' + project.id} ><FontAwesomeIcon icon={faSearch} className={'icon'} /></Link>
                     <h6>{project.title}</h6>

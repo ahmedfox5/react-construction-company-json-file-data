@@ -2,25 +2,17 @@ import React ,{Component} from 'react';
 import Header from './header';
 import Project from './project';
 import Employees from './../home/employees';
-import {Link} from 'react-router-dom';
 import './projects.css';
 import {getProjectsDtata} from './../../api/projects';
+import {connect} from 'react-redux';
+import {startLoading ,stopLoading} from './../../actions/actions';
+import {getProjecsPgDescription} from './../../api/projects';
 
-export default class Projects extends Component{
+
+class Projects extends Component{
     state={
-        projectsPg:{
-            description:""
-        },
-        ourEmployees : {
-            description : "",
-            employees : [
-                {
-                    id : 0,
-                    name : "",
-                    image : "",
-                    job : ""
-                }
-            ]
+        description:{
+            value : "",
         },
         projects : [
             {
@@ -30,19 +22,21 @@ export default class Projects extends Component{
             }
         ]
     }
+
+
     componentDidMount(){
-        getProjectsDtata().then(response=>{
+        this.props.startLoading();
+        getProjecsPgDescription().then(response=>{
             this.setState({
-                projectsPg : response.data.projectsPg,
-                ourEmployees : response.data.ourEmployees,
-                projects : response.data.projects
-            })
+                description : response
+            });
+            this.props.stopLoading();
         })
     }
     render(){
-        const projects = this.state.projects.map(pro=>{
+        const projects = this.props.projects.map( pro =>{
             return(
-                <Project key={pro.id} project={pro} />
+                <Project url={this.props.url} key={pro.id} project={pro} />
             );
         });
         return(
@@ -54,10 +48,8 @@ export default class Projects extends Component{
                 <div>
                     <h2 className={'font-weight-bolder text-center'} >Our Projects</h2>
                     <br/>
-                    <p className={'w-75 m-auto'} > Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitationem quae 
-                        corporis praesentium quisquam pariatur magni laborum quasi fugiat, suscipit molestiae distinctio 
-                        quis saepe Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro perspiciatis exercitat
-                        quae corporis praesentium quisquam pariatur magni 
+                    <p className={'w-75 m-auto'} > 
+                        {this.state.description.value}
                     </p>
 
                     <br/>
@@ -69,9 +61,25 @@ export default class Projects extends Component{
 
                     <br/><br/>
                 
-                <Employees ourEmployees={this.state.ourEmployees} />
+                <Employees url={this.props.url} ourEmployees={this.state.ourEmployees} />
 
             </div>
         );
     }
 }
+
+function mapStateToProps(state){
+    return{
+        projects : state.projects,
+        url : state.url,
+    }
+}
+
+function mapDispatchToProps(dispatch){
+    return{
+        startLoading : () => dispatch(startLoading),
+        stopLoading : () => dispatch(stopLoading),
+    }
+}
+
+export default connect(mapStateToProps ,mapDispatchToProps)(Projects);

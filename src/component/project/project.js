@@ -4,30 +4,40 @@ import ProjectDescription from './projectDescription';
 import ProjectImages from './projectImages';
 import SectionDescripe from './sectionDescripe';
 import {getProjectData} from './../../api/projects';
+import {getProject} from './../../api/projects';
+import {connect} from 'react-redux';
 
-
-export default class Project extends Component{
+class Project extends Component{
     state={
         project : {
             id:0,
             title:"",
             description:"",
+            img:"",
             sections : [
                 {
                     id : 0,
                     description : "",
-                    sectionImage: ""
+                    img: ""
                 }
             ],
-            projectImages : []
+            images : [
+                {
+                    id : 0 ,
+                    img : ""
+                }
+            ]
         }
     }
     componentDidMount(){
-        getProjectData(this.props.match.params.id).then(response => {
-            console.log(response);
-            this.setState({
-                project : response
-            })
+        
+        getProject(this.props.match.params.id).then(response => {
+            if(response.data.success){
+                this.setState({
+                    project : response.data.project[0]
+                });
+                console.log(response.data.project[0]);
+            }
         });
     }
     render(){
@@ -41,13 +51,22 @@ export default class Project extends Component{
 
                     <br/><br/>
 
-                <SectionDescripe sections={this.state.project.sections} />
+                <SectionDescripe url={this.props.url} sections={this.state.project.sections} />
 
                     <br/><br/>
 
-                <ProjectImages images={this.state.project.projectImages} />
+                <ProjectImages url={this.props.url} images={this.state.project.images} />
                 
             </div>
         );
     }
 }
+
+function mapStateToProps(state){
+    return{
+        url : state.url,
+    }
+}
+
+
+export default connect(mapStateToProps)(Project);
